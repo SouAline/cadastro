@@ -7,6 +7,6 @@ export default (props) => (
   <Routes>
     <Route exact path="/" component={Home}></Route>
     <Route path="/users" component={UserCrud}></Route>
-    {/* implementar redirect aqui */}
+    <Route path="*" element={<Home />}></Route>
   </Routes>
 );
