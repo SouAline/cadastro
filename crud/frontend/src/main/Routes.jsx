@@ -5,8 +5,7 @@ import UserCrud from "../components/user/UserCrud";
 
 export default (props) => (
   <Routes>
-    <Route exact path="/" component={Home}></Route>
-    <Route path="/users" component={UserCrud}></Route>
-    <Route path="*" element={<Home />}></Route>
+    <Route exact path="/" element={<Home />}></Route>
+    <Route path="/users" element={<UserCrud />}></Route>
   </Routes>
 );
