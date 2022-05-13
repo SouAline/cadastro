@@ -20,7 +20,7 @@ export default class UserCrud extends Component {
   state = { ...initialState };
   componentWillMount() {
     axios(baseUrl).then((resp) => {
-      this.setState({ lkist: resp.data });
+      this.setState({ list: resp.data });
     });
   }
 
@@ -32,12 +32,12 @@ export default class UserCrud extends Component {
     const method = user.id ? "put" : "post";
     const url = user.id ? `${baseUrl}/${user.id}` : baseUrl;
     axios[method](url, user).then((resp) => {
-      const list = this.getUpdateList(resp.data);
+      const list = this.getUpdatedList(resp.data);
       this.setState({ user: initialState.user, list });
     });
   }
 
-  getUpdateList(user, add = true) {
+  getUpdatedList(user, add = true) {
     const list = this.state.list.filter((u) => u.id !== user.id);
     if (add) list.unshift(user);
     return list;
@@ -104,12 +104,10 @@ export default class UserCrud extends Component {
   }
 
   remove(user) {
-    axios.delete(
-      `${baseUrl}/${user.id}`.then((resp) => {
-        const list = this.getUpdatedList(user, false);
-        this.setState({ list });
-      })
-    );
+    axios.delete(`${baseUrl}/${user.id}`).then((resp) => {
+      const list = this.getUpdatedList(user, false);
+      this.setState({ list });
+    });
   }
 
   renderTable() {
@@ -117,7 +115,6 @@ export default class UserCrud extends Component {
       <table className="table mt-4">
         <thead>
           <tr>
-            <th>ID</th>
             <th>Nome</th>
             <th>E-mail</th>
             <th>Ações</th>
@@ -131,14 +128,16 @@ export default class UserCrud extends Component {
     return this.state.list.map((user) => {
       return (
         <tr key={user.id}>
-          <td>{user.id}</td>
           <td>{user.name}</td>
           <td>{user.email}</td>
           <td>
             <button className="btn btn-warning" onClick={() => this.load(user)}>
               <i className="fa fa-pencil"></i>
             </button>
-            <button className="btn btn-danger ml-2" onClick={() => this.remove}>
+            <button
+              className="btn btn-danger ml-2"
+              onClick={() => this.remove(user)}
+            >
               <i className="fa fa-trash"></i>
             </button>
           </td>

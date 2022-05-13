@@ -1,11 +1,6 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Vinicius Moura",
-      "email": "vini@gmail.com"
-    },
-    {
       "id": 2,
       "name": "Chloe Oliveira",
       "email": "chloe@gmail.com"
@@ -24,6 +19,11 @@
       "name": "Aline",
       "email": "ds.alinesouza@gmail.com",
       "id": 5
+    },
+    {
+      "name": " Aline Souza",
+      "email": "ds.alinesouza@gmail.com",
+      "id": 6
     }
   ]
 }
