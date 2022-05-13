@@ -13,6 +13,25 @@ aside.menu-area{
   padding: 15px;
 }
 
+@media(max-width: 768px){
+  .menu{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .menu a{
+    display: inline;
+    padding: 10px;
+    margin: 0px;    
+  }
+
+  .menu{
+    height: 100%;
+    justify-content: space-around;
+    
+  }
+}
 .menu a:hover{
   background: linear-gradient(135deg, #d8a3e2 0%,  #e307df 100% )
 }

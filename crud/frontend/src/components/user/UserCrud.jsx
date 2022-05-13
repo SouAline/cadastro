@@ -136,7 +136,7 @@ export default class UserCrud extends Component {
           <td>{user.email}</td>
           <td>
             <button className="btn btn-warning" onClick={() => this.load(user)}>
-              <i className="fa fa-pensil"></i>
+              <i className="fa fa-pencil"></i>
             </button>
             <button className="btn btn-danger ml-2" onClick={() => this.remove}>
               <i className="fa fa-trash"></i>
@@ -151,8 +151,7 @@ export default class UserCrud extends Component {
     return (
       <Main {...headerProps}>
         {this.renderForm()}
-        {this.renderForm}
-        {this.renderTable}
+        {this.renderTable()}
       </Main>
     );
   }

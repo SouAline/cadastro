@@ -1,12 +1,29 @@
 {
-  "users":[{
-    "id": 1,
-    "name": "Vinicius Moura",
-    "email":"vini@gmail.com"
-  },
-  {
-    "id": 2,
-    "name": "Chloe Oliveira",
-    "email": "chloe@gmail.com"
-  }]
+  "users": [
+    {
+      "id": 1,
+      "name": "Vinicius Moura",
+      "email": "vini@gmail.com"
+    },
+    {
+      "id": 2,
+      "name": "Chloe Oliveira",
+      "email": "chloe@gmail.com"
+    },
+    {
+      "name": " Aline",
+      "email": "ds.alinesouza@gmail.com",
+      "id": 3
+    },
+    {
+      "name": "Aline s",
+      "email": "ds.alinesouza@gmail.com",
+      "id": 4
+    },
+    {
+      "name": "Aline",
+      "email": "ds.alinesouza@gmail.com",
+      "id": 5
+    }
+  ]
 }
